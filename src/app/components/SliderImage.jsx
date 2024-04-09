@@ -43,13 +43,13 @@ const SliderImage = () => {
   };
 
   return (
-    <div className="slider-container relative">
+    <div className="slider-container relative w-screen">
       {images.length > 0 && (
         <>
           <img
             src={images[currentIndex]}
             alt="Slider Image"
-            className="w-auto h-auto"
+            className="w-screen h-[600px]"
           />
           <button
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-l"
