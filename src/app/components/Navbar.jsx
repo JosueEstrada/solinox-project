@@ -23,13 +23,19 @@ const Navbar = () => {
                 href="#"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
               >
-                Inicio
+                Inicio 
               </a>
               <a
                 href="#"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
               >
                 Nosotros
+              </a>
+              <a
+                href="#"
+                className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
+              >
+                Certificaciones
               </a>
               <a
                 href="#"
@@ -96,6 +102,12 @@ const Navbar = () => {
           >
             Nosotros
           </a>
+          <a
+                href="#"
+                className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
+              >
+                Certificaciones
+              </a>
           <a
             href="#"
             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
