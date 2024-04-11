@@ -3,7 +3,7 @@ const TopHeader = () => {
     <div className="bg-[rgba(224,31,31,0.86)] text-white py-2 font-bold">
       <div className="px-24 container mx-auto px-4 flex justify-between items-center">
         <div className="space-x-4">
-          <span>Teléfono de contacto:  +51 925110992</span>
+          <span>Teléfono de contacto: +51 925110992</span>
           <a href="mailto:proyectos@solinoxperu.com">
             <span>proyectos@solinoxperu.com</span>
           </a>
