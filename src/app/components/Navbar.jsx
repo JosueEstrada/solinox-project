@@ -45,12 +45,12 @@ const Navbar = () => {
               >
                 Servicios
               </a>
-              <a
-                href="#"
+              <Link
+                href="/contacto"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
               >
                 Contacto
-              </a>
+              </Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
