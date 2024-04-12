@@ -1,4 +1,7 @@
 "use client";
+
+import Link from 'next/link';
+// import Nosotros from '../nosotros/page'
 import { useState } from "react";
 
 const Navbar = () => {
@@ -25,12 +28,11 @@ const Navbar = () => {
               >
                 Inicio 
               </a>
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
-              >
-                Nosotros
-              </a>
+              <Link href="/nosotros">
+                <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
+                  Nosotros
+                </div>
+              </Link>
               <a
                 href="#"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
