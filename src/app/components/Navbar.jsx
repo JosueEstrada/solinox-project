@@ -47,8 +47,8 @@ const Navbar = () => {
                 <a
                   className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center"
                   onClick={(e) => {
-                    e.preventDefault(); // Evitar la navegación predeterminada al hacer clic
-                    setIsOpen(!isOpen); // Alternar el estado del menú desplegable
+                    e.preventDefault(); 
+                    setIsOpen(!isOpen); 
                   }}
                 >
                   Servicios
@@ -60,7 +60,7 @@ const Navbar = () => {
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 1</a>
                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 2</a>
-                    {/* Agrega más elementos de submenu si es necesario */}
+                    
                   </div>
                 )}
               </div>
