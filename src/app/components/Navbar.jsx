@@ -1,6 +1,6 @@
 "use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 // import Nosotros from '../nosotros/page'
 import { useState } from "react";
 
@@ -23,10 +23,10 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
               <a
-                href="#"
+                href="/"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
               >
-                Inicio 
+                Inicio
               </a>
               <Link href="/nosotros">
                 <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
@@ -105,11 +105,11 @@ const Navbar = () => {
             Nosotros
           </a>
           <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
-              >
-                Certificaciones
-              </a>
+            href="#"
+            className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
+          >
+            Certificaciones
+          </a>
           <a
             href="#"
             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
