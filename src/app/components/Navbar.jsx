@@ -45,8 +45,8 @@ const Navbar = () => {
                 <a
                   className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center"
                   onClick={(e) => {
-                    e.preventDefault(); // Evitar la navegación predeterminada al hacer clic
-                    setIsOpen(!isOpen); // Alternar el estado del menú desplegable
+                    e.preventDefault(); 
+                    setIsOpen(!isOpen); 
                   }}
                 >
                   Servicios
@@ -78,7 +78,7 @@ const Navbar = () => {
                     >
                       Servicio 2
                     </a>
-                    {/* Agrega más elementos de submenu si es necesario */}
+                    
                   </div>
                 )}
               </div>
