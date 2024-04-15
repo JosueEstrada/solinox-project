@@ -2,9 +2,16 @@ const Footer = () => {
     return (
       <div className="bg-[#666] text-white py-2 font-bold">
         <div className="px-24 container mx-auto px-4 flex justify-between items-center">
-            <Image
-            src="/" 
-            />
+            
+            <div>
+                 <div className="lg:w-1/2">
+                    <img src="/solinox-footer1.png" alt="Nosotros" className="w-full" />
+                    
+                  </div>
+            </div>
+          
+            
+
             <div>
             La Empresa
 Inicio

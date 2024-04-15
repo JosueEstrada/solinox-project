@@ -45,8 +45,8 @@ const Navbar = () => {
                 <a
                   className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center"
                   onClick={(e) => {
-                    e.preventDefault(); // Evitar la navegación predeterminada al hacer clic
-                    setIsOpen(!isOpen); // Alternar el estado del menú desplegable
+                    e.preventDefault();
+                    setIsOpen(!isOpen); 
                   }}
                 >
                   Servicios
@@ -70,15 +70,27 @@ const Navbar = () => {
                       href="#"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      Servicio 1
+                      Tanques de Acero
                     </a>
                     <a
                       href="#"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      Servicio 2
+                      Tanques de Fibra de Vidrio
                     </a>
-                    {/* Agrega más elementos de submenu si es necesario */}
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                       Tanques para Tratamiento de Agua Residual
+                    </a>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                       Más servicios
+                    </a>
+                
                   </div>
                 )}
               </div>
