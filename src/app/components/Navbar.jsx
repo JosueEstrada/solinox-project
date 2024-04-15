@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 // import Nosotros from '../nosotros/page'
+
 import { useState } from "react";
 
 const Navbar = () => {
@@ -22,12 +23,12 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
-              <a
+              <Link
                 href="/"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
               >
                 Inicio
-              </a>
+              </Link>
               <Link href="/nosotros">
                 <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
                   Nosotros
@@ -39,12 +40,49 @@ const Navbar = () => {
               >
                 Certificaciones
               </a>
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
-              >
-                Servicios
-              </a>
+
+              <div className="relative">
+                <a
+                  className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center"
+                  onClick={(e) => {
+                    e.preventDefault(); // Evitar la navegación predeterminada al hacer clic
+                    setIsOpen(!isOpen); // Alternar el estado del menú desplegable
+                  }}
+                >
+                  Servicios
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </a>
+                {isOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Servicio 1
+                    </a>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Servicio 2
+                    </a>
+                    {/* Agrega más elementos de submenu si es necesario */}
+                  </div>
+                )}
+              </div>
+
               <Link
                 href="/contacto"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
@@ -91,19 +129,18 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 sm:px-3">
-          <a
-            href="#"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+        <div className="ml-4 flex items-center md:ml-6">
+          <Link
+            href="/"
+            className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
           >
             Inicio
-          </a>
-          <a
-            href="#"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
-          >
-            Nosotros
-          </a>
+          </Link>
+          <Link href="/nosotros">
+            <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
+              Nosotros
+            </div>
+          </Link>
           <a
             href="#"
             className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
@@ -112,16 +149,16 @@ const Navbar = () => {
           </a>
           <a
             href="#"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+            className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
           >
             Servicios
           </a>
-          <a
-            href="#"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300"
+          <Link
+            href="/contacto"
+            className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
           >
             Contacto
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
