@@ -43,67 +43,27 @@ const Navbar = () => {
                 Certificaciones
               </a>
 
-
-              {/* /* <Link href="#">
-                <div
-                  onClick={toggleMenu}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 flex items-center relative"
+              <div className="relative">
+                <a
+                  className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center"
+                  onClick={(e) => {
+                    e.preventDefault(); // Evitar la navegación predeterminada al hacer clic
+                    setIsOpen(!isOpen); // Alternar el estado del menú desplegable
+                  }}
                 >
                   Servicios
-                  <svg
-                    className={`${isOpen ? "transform rotate-180" : ""} ml-1 h-4 w-4`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
+                  <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </div>
-              </Link>
-              {isOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 1</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 2</a>
-                  // {/* Agrega más elementos de submenu si es necesario */
-              //   </div>
-              // )} */} */} }
-            }
-
-            {/* <Link href="#" className="relative">
-              <a className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center">
-                Servicios
-                <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 1</a>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 2</a>
-                
+                </a>
+                {isOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 1</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 2</a>
+                    {/* Agrega más elementos de submenu si es necesario */}
+                  </div>
+                )}
               </div>
-          </Link> */}
- 
- <div className="relative">
-  <a
-    className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300 flex items-center"
-    onClick={(e) => {
-      e.preventDefault(); // Evitar la navegación predeterminada al hacer clic
-      setIsOpen(!isOpen); // Alternar el estado del menú desplegable
-    }}
-  >
-    Servicios
-    <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
-  {isOpen && (
-    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 1</a>
-      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Servicio 2</a>
-      {/* Agrega más elementos de submenu si es necesario */}
-    </div>
-  )}
-</div>
 
               <Link
                 href="/contacto"
