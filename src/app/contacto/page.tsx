@@ -9,7 +9,7 @@ export default function Contacto() {
           Envíanos un mensaje
         </p>
         {/* Grid responsive */}
-        <div className="grid lg:gap-8 lg:grid-cols-2 grid-cols-2">
+        <div className="grid lg:gap-8 lg:grid-cols-2 grid-cols-1">
           {/* Formulario de contacto */}
           <form action="#" className="space-y-8 mb-8 ">
             <div>
