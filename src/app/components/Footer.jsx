@@ -3,7 +3,7 @@ import Image from "next/image";
 const SITEMAP = [
   {
     title: "La Empresa",
-    links: ["Inicio", "Nosotros", "Conctaco"],
+    links: ["Inicio", "Nosotros", "Contacto"],
   },
   {
     title: "Servicios",
@@ -37,23 +37,17 @@ export default function Footer() {
             width={220}
             height={128}
             alt="Logo Solinox"
-            className="mb-6"
+            className="mb-6 mx-auto"
           />
           {SITEMAP.map(({ title, links }, key) => (
             <div key={key} className="w-full">
-              <div
-                variant="small"
-                color="blue-gray"
-                className="mb-4 font-bold uppercase opacity-50"
-              >
-                {title}
-              </div>
+              <div className="mb-4 font-bold uppercase opacity-50">{title}</div>
               <ul className="space-y-1">
                 {links.map((link, key) => (
                   <li key={key} color="blue-gray" className="font-normal">
                     <a
                       href="#"
-                      className="inline-block py-1 pr-2 transition-transform hover:scale-105"
+                      className="inline-block py-1 pr-2 transition-transform hover:scale-105 hover:font-bold"
                     >
                       {link}
                     </a>
@@ -64,10 +58,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
-          <div
-            variant="small"
-            className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
-          >
+          <div className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0">
             &copy; {currentYear}{" "}
             <a href="https://material-tailwind.com/">Solinox</a>. Todos los
             derechos reservados.
