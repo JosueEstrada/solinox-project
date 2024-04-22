@@ -1,5 +1,5 @@
-import Image from "next/image";
 import SliderImage from "@/components/SliderImage";
+import Image from "next/image";
 import fondoImage from "./public/fondo.jpg";
 import iconIndustria from "/icon_industria2.png";
 import iconMineria from "/public/icon_mineria1.png";
@@ -47,38 +47,46 @@ export default function Home() {
         </div>
         <div className="container flex justify-between w-auto gap-2">
           <div className="flex flex-col items-center w-1/4 space-y-4">
-            <img
+            <Image
               className="w-full border-b-red-500 border-4 "
-              src="https://placehold.co/200x200"
-              alt=""
+              src="/acero.jpg"
+              alt="acero"
+              height={200}
+              width={200}
             />
             <h3 className="text-center">
               Tanques de Acero al Carbón e Inoxidable
             </h3>
           </div>
           <div className="flex flex-col items-center w-1/4 space-y-4">
-            <img
+            <Image
               className="w-full border-b-red-500 border-4"
-              src="https://placehold.co/200x200"
-              alt=""
+              src="/fibra.jpg"
+              alt="fibra"
+              height={200}
+              width={200}
             />
             <h3 className="text-center">Tanques de Fibra de Vidrio</h3>
           </div>
           <div className="flex flex-col items-center w-1/4 space-y-4">
-            <img
+            <Image
               className="w-full border-b-red-500 border-4"
-              src="https://placehold.co/200x200"
-              alt=""
+              src="/residual.jpg"
+              alt="residual"
+              height={180}
+              width={200}
             />
             <h3 className="text-center">
               Tanques para Tratamiento de Agua Residual
             </h3>
           </div>
           <div className="flex flex-col items-center w-1/4 space-y-4">
-            <img
+            <Image
               className="w-full border-b-red-500 border-4"
-              src="https://placehold.co/200x200"
-              alt=""
+              src="/servicios.jpg"
+              alt="servicios"
+              height={200}
+              width={200}
             />
             <h3 className="text-center">Más servicios</h3>
           </div>

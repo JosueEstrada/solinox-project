@@ -1,7 +1,10 @@
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
+
 const TopHeader = () => {
   return (
-    <div className="px-24 md:flex justify-start items-center md:space-x-4 bg-[rgba(224,28,49,1.000)] text-white py-2 font-bold">
-      <span>
+    <div className="px-24 md:flex justify-start items-center md:space-x-4 bg-[rgba(224,28,49,1.000)] text-white py-2 font-bold w-full">
+      <span className="w-full">
         <a href="tel:925110992" className="flex gap-2">
           <svg
             className="w-6 h-6 min-h-6 min-w-6"
@@ -43,6 +46,16 @@ const TopHeader = () => {
           proyectos@solinoxperu.com
         </a>
       </span>
+      <div className=" flex justify-end md:w-full">
+        <Link
+          href="/api/auth/signin"
+          className={`${buttonVariants({
+            variant: "secondary",
+          })}`}
+        >
+          Acceso
+        </Link>
+      </div>
     </div>
   );
 };
