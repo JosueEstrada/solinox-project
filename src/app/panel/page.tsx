@@ -9,27 +9,27 @@ import Image from "next/image";
 
 const cardData: CardProps[] = [
   {
-    label: "Total Revenue",
-    amount: "$45,231.89",
-    discription: "+20.1% from last month",
+    label: "Total de ventas por web",
+    amount: "S/. 17,231.89",
+    discription: "+20.1% desde el mes pasado",
     icon: DollarSign,
   },
   {
-    label: "Subscriptions",
-    amount: "+2350",
-    discription: "+180.1% from last month",
+    label: "Pedidos de prototipo",
+    amount: "+20",
+    discription: "+180.1% desde el mes pasado",
     icon: Users,
   },
   {
-    label: "Sales",
-    amount: "+12,234",
-    discription: "+19% from last month",
+    label: "Ventas finales",
+    amount: "+8",
+    discription: "+19% desde el mes pasado",
     icon: CreditCard,
   },
   {
-    label: "Active Now",
-    amount: "+573",
-    discription: "+201 since last hour",
+    label: "Prototipos en espera",
+    amount: "+4",
+    discription: "En espera de aprobación",
     icon: Activity,
   },
 ];
@@ -38,27 +38,27 @@ const uesrSalesData: SalesProps[] = [
   {
     name: "Olivia Martin",
     email: "olivia.martin@email.com",
-    saleAmount: "+$1,999.00",
+    saleAmount: "+S/1,999.00",
   },
   {
     name: "Jackson Lee",
     email: "isabella.nguyen@email.com",
-    saleAmount: "+$1,999.00",
+    saleAmount: "+S/1,999.00",
   },
   {
     name: "Isabella Nguyen",
     email: "isabella.nguyen@email.com",
-    saleAmount: "+$39.00",
+    saleAmount: "+S/390.00",
   },
   {
     name: "William Kim",
     email: "will@email.com",
-    saleAmount: "+$299.00",
+    saleAmount: "+S/299.00",
   },
   {
     name: "Sofia Davis",
     email: "sofia.davis@email.com",
-    saleAmount: "+$39.00",
+    saleAmount: "+S/200.00",
   },
 ];
 
@@ -79,15 +79,15 @@ export default function Home() {
       </section>
       <section className="grid grid-cols-1  gap-4 transition-all lg:grid-cols-2">
         <CardContent>
-          <p className="p-4 font-semibold">Overview</p>
+          <p className="p-4 font-semibold">Vista general</p>
 
           <BarChart />
         </CardContent>
         <CardContent className="flex justify-between gap-4">
           <section>
-            <p>Recent Sales</p>
+            <p>Prototipos producidos X Precio</p>
             <p className="text-sm text-gray-400">
-              You made 265 sales this month.
+              Realizaste 10 prototipos este mes.
             </p>
           </section>
           {uesrSalesData.map((d, i) => (

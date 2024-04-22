@@ -12,6 +12,7 @@ import {
   LayoutDashboard,
   Settings,
   ShoppingCart,
+  SquareMousePointer,
   UsersRound,
 } from "lucide-react";
 
@@ -44,27 +45,33 @@ export default function SideNavbar({}: Props) {
         isCollapsed={mobileWidth ? true : isCollapsed}
         links={[
           {
-            title: "Dashboard",
-            href: "/",
+            title: "Tablero",
+            href: "/panel",
             icon: LayoutDashboard,
             variant: "default",
           },
           {
-            title: "Users",
-            href: "/users",
+            title: "Usuarios",
+            href: "/panel/usuarios",
             icon: UsersRound,
             variant: "ghost",
           },
           {
-            title: "Ordrs",
-            href: "/orders",
+            title: "Pedidos",
+            href: "/panel/pedidos",
             icon: ShoppingCart,
             variant: "ghost",
           },
           {
-            title: "Settings",
-            href: "/settings",
+            title: "Ajustes",
+            href: "/panel/ajustes",
             icon: Settings,
+            variant: "ghost",
+          },
+          {
+            title: "Regresar web",
+            href: "/",
+            icon: SquareMousePointer,
             variant: "ghost",
           },
         ]}

@@ -23,7 +23,7 @@ export default function SalesCard(props: SalesProps) {
           <img
             width={200}
             height={200}
-            src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${props.name}`}
+            src={`https://api.dicebear.com/8.x/bottts-neutral/svg?seed=${props.name}`}
             alt="avatar"
           />
         </div>
