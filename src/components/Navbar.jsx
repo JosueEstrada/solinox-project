@@ -34,12 +34,12 @@ const Navbar = () => {
                   Nosotros
                 </div>
               </Link>
-              <a
-                href="#"
+              <Link
+                href="/certificaciones"
                 className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300"
               >
                 Certificaciones
-              </a>
+              </Link>
 
               <div className="relative">
                 <a
@@ -66,31 +66,30 @@ const Navbar = () => {
                 </a>
                 {isOpen && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                    <a
-                      href="#"
+                    <Link
+                      href="/tanques-de-acero"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Tanques de Acero
-                    </a>
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      href="/tanques-de-fibra-de-vidrio"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Tanques de Fibra de Vidrio
-                    </a>
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      href="/tanques-para-tratamiento-de-agua-residual"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Tanques para Tratamiento de Agua Residual
-                    </a>
-
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      href="/mas-servicios"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      mas servicios
-                    </a>
+                      Más Servicios
+                    </Link>
                   </div>
                 )}
               </div>

@@ -3,7 +3,9 @@ export default function Nosotros() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <section className="container flex flex-col lg:flex-row justify-center items-center bg-no-repeat bg-cover bg-center h-auto w-full">
         <div className="lg:w-1/2 p-8">
-          <h2 className="text-4xl py-12">Sobre Nosotros</h2>
+          <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-800 text-center">
+            Sobre Nosotros
+          </h2>
           <p className="text-l py-6 text-[#666]">
             SOLINOX <br />
             <br />
