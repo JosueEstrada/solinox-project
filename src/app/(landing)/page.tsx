@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SliderImage from "../components/SliderImage";
+import SliderImage from "@/components/SliderImage";
 import fondoImage from "./public/fondo.jpg";
 import iconIndustria from "/icon_industria2.png";
 import iconMineria from "/public/icon_mineria1.png";
