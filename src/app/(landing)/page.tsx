@@ -1,3 +1,4 @@
+"use client";
 import SliderImage from "@/components/SliderImage";
 import Image from "next/image";
 import fondoImage from "./public/fondo.jpg";
@@ -5,6 +6,9 @@ import iconIndustria from "/icon_industria2.png";
 import iconMineria from "/public/icon_mineria1.png";
 import iconUrbano from "/public/icon_urbano1.png";
 import iconVial from "/public/icon_vial1.png";
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
+
+
 
 export default function Home() {
   return (
@@ -156,6 +160,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <FloatingWhatsApp phoneNumber="951123345" accountName="Solinox Rpte." chatMessage="Hola :) , ¿qué servicio requieres?" statusMessage="Atendemos de 8am a 1pm"  />
+
     </main>
   );
 }
