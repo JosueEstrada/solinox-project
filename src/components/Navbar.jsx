@@ -100,6 +100,13 @@ const Navbar = () => {
               >
                 Contacto
               </Link>
+              
+              <Link href="/blog">
+                <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
+                  Blog
+                </div>
+          </Link>
+
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -170,6 +177,9 @@ const Navbar = () => {
           >
             Contacto
           </Link>
+          
+          
+
         </div>
       </div>
     </nav>
