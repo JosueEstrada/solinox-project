@@ -14,18 +14,30 @@ export default function CilindroPage() {
     if (!mountRef.current) return;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth*0.8 / window.innerHeight*0.6, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.6);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0xEECAD1); // Establece el color de fondo
     mountRef.current.appendChild(renderer.domElement);
 
+    // Añadir luz ambiental
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    // Añadir luz direccional
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 5, 5).normalize();
+    scene.add(directionalLight);
+
+    // Crear geometría del cilindro
     const geometry = new THREE.CylinderGeometry(radiusTop, radiusBottom, height, 32);
-    const material = new THREE.MeshBasicMaterial({
-      color: 0x0077ff,
-      transparent: true,
+
+    // Material del cilindro
+    const material = new THREE.MeshLambertMaterial({
+      color: 0xffffff,
       opacity: 0.5,
-      wireframe: true,
+      side: THREE.DoubleSide,
+      transparent: true,
     });
     const cylinder = new THREE.Mesh(geometry, material);
     scene.add(cylinder);
@@ -43,7 +55,6 @@ export default function CilindroPage() {
     animate();
 
     setCylinder(cylinder);
-    
 
     return () => {
       if (mountRef.current) {
@@ -58,13 +69,12 @@ export default function CilindroPage() {
       cylinder.geometry = new THREE.CylinderGeometry(radiusTop, radiusBottom, height, 32);
     }
   }, [radiusTop, radiusBottom, height]);
-  
 
   return (
     <div>
       <div>
         <label>
-          Radius Top:
+          Radio superior:
           <input
             type="number"
             value={radiusTop}
@@ -72,7 +82,7 @@ export default function CilindroPage() {
           />
         </label>
         <label>
-          Radius Bottom:
+          Radio inferior:
           <input
             type="number"
             value={radiusBottom}
@@ -80,7 +90,7 @@ export default function CilindroPage() {
           />
         </label>
         <label>
-          Height:
+          Altura:
           <input
             type="number"
             value={height}

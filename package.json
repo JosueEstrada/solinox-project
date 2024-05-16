@@ -17,6 +17,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-hook/window-size": "^3.1.1",
     "@tanstack/react-table": "^8.16.0",
+    "@types/three": "^0.164.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.372.0",
@@ -28,6 +29,7 @@
     "recharts": "^2.12.6",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.164.1",
     "ws": "^8.16.0"
   },
   "devDependencies": {
