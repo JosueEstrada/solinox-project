@@ -145,7 +145,7 @@ export default function Home() {
       </section>
 
       {/* SECCION CONTACTO*/}
-      <section className="w-full">
+      <section className="w-full relative overflow-hidden" >
         <div className="text-center text-white bg-[url('/fondocontacto.jpg')] w-auto bg-no-repeat bg-cover">
           <div className="bg-[rgba(12,12,12,0.55)] w-full h-[400px] flex justify-center items-center flex-col gap-6">
             <h2 className="font-bold text-4xl">Cuéntenos su proyecto</h2>
@@ -154,12 +154,17 @@ export default function Home() {
               sedimentadores, clarificadores, aireadores, sistemas de flotación
               por oxígeno disuelto (D.A.F.), desnatadores, etc.
             </p>
-            <button className="border-white border-2 p-2 rounded-sm">
+            <a
+            href="/contacto"
+            className="border-white border-2 p-2 rounded-sm">
               Contactar
-            </button>{" "}
+            </a>{" "}
           </div>
         </div>
       </section>
+
+
+
       <FloatingWhatsApp phoneNumber="951123345" accountName="Solinox Rpte." chatMessage="Hola :) , ¿qué servicio requieres?" statusMessage="Atendemos de 8am a 1pm"  />
 
     </main>
