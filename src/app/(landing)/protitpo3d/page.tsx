@@ -14,9 +14,9 @@ export default function CilindroPage() {
     if (!mountRef.current) return;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth*0.8 / window.innerHeight*0.6, 0.1, 100);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth*0.8, window.innerHeight*0.6);
     renderer.setClearColor(0xEECAD1); // Establece el color de fondo
     mountRef.current.appendChild(renderer.domElement);
 
@@ -43,6 +43,7 @@ export default function CilindroPage() {
     animate();
 
     setCylinder(cylinder);
+    
 
     return () => {
       if (mountRef.current) {
@@ -57,6 +58,7 @@ export default function CilindroPage() {
       cylinder.geometry = new THREE.CylinderGeometry(radiusTop, radiusBottom, height, 32);
     }
   }, [radiusTop, radiusBottom, height]);
+  
 
   return (
     <div>
@@ -90,3 +92,4 @@ export default function CilindroPage() {
     </div>
   );
 }
+
