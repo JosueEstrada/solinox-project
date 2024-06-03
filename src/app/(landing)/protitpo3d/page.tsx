@@ -1,35 +1,44 @@
-/** @client */
+"use client"
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default function CilindroPage() {
-  // Especifica que el tipo de la referencia es HTMLDivElement o null
-  const mountRef = useRef<HTMLDivElement>(null);
+  const mountRef = useRef<HTMLDivElement | null>(null);
+  const [radiusTop, setRadiusTop] = useState(1);
+  const [radiusBottom, setRadiusBottom] = useState(1);
   const [height, setHeight] = useState(2);
-  const [radius, setRadius] = useState(1);
+  const [cylinder, setCylinder] = useState<THREE.Mesh | null>(null);
 
   useEffect(() => {
-    // Aquí ya no necesitas la comprobación adicional de TypeScript, pero sigue siendo buena práctica
-    if (mountRef.current) {
-      const currentElement = mountRef.current; // Ahora TypeScript sabe que es un HTMLDivElement
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, currentElement.clientWidth / currentElement.clientHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(currentElement.clientWidth, currentElement.clientHeight);
-      currentElement.appendChild(renderer.domElement);
+    if (!mountRef.current) return;
 
-      const geometry = new THREE.CylinderGeometry(radius, radius, height, 32);
-      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
-      const cylinder = new THREE.Mesh(geometry, material);
-      scene.add(cylinder);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xEECAD1); // Establece el color de fondo
+    mountRef.current.appendChild(renderer.domElement);
 
-      camera.position.z = 5;
+    const geometry = new THREE.CylinderGeometry(radiusTop, radiusBottom, height, 32);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x0077ff,
+      transparent: true,
+      opacity: 0.5,
+      wireframe: true,
+    });
+    const cylinder = new THREE.Mesh(geometry, material);
+    scene.add(cylinder);
 
-      const animate = () => {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-      };
+    camera.position.z = 5;
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+
+    const animate = function () {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
 
     animate();
 
@@ -47,13 +56,37 @@ export default function CilindroPage() {
       cylinder.geometry.dispose();
       cylinder.geometry = new THREE.CylinderGeometry(radiusTop, radiusBottom, height, 32);
     }
-  }, [height, radius]);
+  }, [radiusTop, radiusBottom, height]);
 
   return (
     <div>
-      <div ref={mountRef} style={{ width: '100%', height: '400px' }} />
-      <input type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} placeholder="Altura del cilindro" />
-      <input type="number" value={radius} onChange={(e) => setRadius(Number(e.target.value))} placeholder="Radio del cilindro" />
+      <div>
+        <label>
+          Radius Top:
+          <input
+            type="number"
+            value={radiusTop}
+            onChange={(e) => setRadiusTop(Number(e.target.value))}
+          />
+        </label>
+        <label>
+          Radius Bottom:
+          <input
+            type="number"
+            value={radiusBottom}
+            onChange={(e) => setRadiusBottom(Number(e.target.value))}
+          />
+        </label>
+        <label>
+          Height:
+          <input
+            type="number"
+            value={height}
+            onChange={(e) => setHeight(Number(e.target.value))}
+          />
+        </label>
+      </div>
+      <div ref={mountRef} style={{ width: '100vw', height: '100vh' }} />
     </div>
   );
 }
