@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-// import Nosotros from '../nosotros/page'
+
 
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white relative" style={{ zIndex: 1000 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-around h-16">
           <div className="flex items-center">
@@ -105,8 +105,12 @@ const Navbar = () => {
                 <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
                   Blog
                 </div>
-          </Link>
-
+              </Link>
+              <Link href="/protitpo3d">
+                <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
+                  Prototipo 3D
+                </div>
+              </Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -178,6 +182,17 @@ const Navbar = () => {
             Contacto
           </Link>
           
+          <Link href="/blog">
+                <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
+                  Blog
+                </div>
+          </Link>
+
+          <Link href="/protitpo3d">
+                <div className="px-3 py-2 rounded-md text-sm font-medium text-[rgba(0,0,0,0.6)] hover:text-gray-300">
+                  Prototipo 3D
+                </div>
+          </Link>
           
 
         </div>
